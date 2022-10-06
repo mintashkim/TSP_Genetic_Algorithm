@@ -1,4 +1,4 @@
-# Traveling Salesman Problem with Genetic Algorithm
+# Solving Traveling Salesman Problem with Genetic Algorithm
 
 ### 1. Initial population (Related function: createInitialPopulation(), performEvolution())
 In the original version of code, we create randomly permutated genotype in the given number of times (numPopulation) and regard it as our initial population. However, during research, I found that k-means clustering performs better because it provides population with genotypes have less total distance. Then, the idea is simple, which is providing better genotypes than randomly selected out of N! (N: number of cities) cases. Hence, I utilized the fitness function to rank each genotype which is randomly created. Create 10 times numPopulation number of genotypes and rank it using the fitness function. Then, return the top numPopulation genotypes as an initial population. This method is simple but strong because we can prevent inferior genotypes which are way too far from the optimal solution.  
